@@ -2,6 +2,7 @@ import UserNavbar from '@/components/UserNavbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import AsideMenuBar from '@/components/AsideMenuBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,10 @@ export default function RootLayout({
     <html lang="en" className='dark'>
       <body className={inter.className}>
         <UserNavbar />
+        <div className='flex container mx-auto'>
+        <AsideMenuBar />
         {children}
+        </div>
         </body>
     </html>
   )
