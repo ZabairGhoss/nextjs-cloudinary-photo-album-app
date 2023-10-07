@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const AsideMenuBar = () => {
   return (
@@ -10,7 +11,8 @@ const AsideMenuBar = () => {
             Manage
           </h2>
           <div className="space-y-1">
-            <Button variant="secondary" className="w-full justify-start gap-2">
+            <Button variant="secondary" asChild className="w-full justify-start gap-2">
+              <Link href={"/gallery"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -26,8 +28,10 @@ const AsideMenuBar = () => {
                 />
               </svg>
               Gallery
+              </Link>
             </Button>
-            <Button variant="ghost" className="w-full justify-start gap-2">
+            <Button variant="ghost" asChild className="w-full justify-start gap-2">
+              <Link href={"/Albums"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -43,8 +47,10 @@ const AsideMenuBar = () => {
                 />
               </svg>
               Albums
+              </Link>
             </Button>
-            <Button variant="ghost" className="w-full justify-start gap-2">
+            <Button variant="ghost" asChild className="w-full justify-start gap-2">
+              <Link href={"/favorites"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -60,6 +66,7 @@ const AsideMenuBar = () => {
                 />
               </svg>
               Favourites
+              </Link>
             </Button>
           </div>
         </div>
