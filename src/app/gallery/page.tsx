@@ -1,17 +1,18 @@
-import { CldImage } from "next-cloudinary";
 import UploadButton from "./UploadButton";
 import cloudinary from "cloudinary";
 import CloudinayImage from "./CloudinaryImage";
 
-type SearchResult = {
+export type SearchResult = {
     public_id: string;
+    tags: string[];
 }
 
 export default async function GalleryPage() {
     const result = await cloudinary.v2.search
     .expression('resource_type:image')
     .sort_by('created_at','desc')
-    .max_results(10)
+    .with_field("tags")
+    .max_results(30)
     .execute() as {resources: SearchResult[]};
     console.log('cloudinary Result:', result);
     
@@ -27,11 +28,12 @@ export default async function GalleryPage() {
 
         {result.resources.map((result) => (
             <CloudinayImage
-            key={result.public_id}
-            src={result.public_id}
-            width="400"
-            height="300"
-            alt={"image discription"}
+             key={result.public_id}
+             imagedata={result}
+             path="/gallery"
+             width="400"
+             height="300"
+             alt={"image discription"}
             />
         ))}
         </div>
