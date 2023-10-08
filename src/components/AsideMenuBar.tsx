@@ -11,7 +11,7 @@ const AsideMenuBar = () => {
             Manage
           </h2>
           <div className="space-y-1">
-            <Button variant="secondary" asChild className="w-full justify-start gap-2">
+            <Button variant="ghost" asChild className="w-full justify-start gap-2">
               <Link href={"/gallery"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
