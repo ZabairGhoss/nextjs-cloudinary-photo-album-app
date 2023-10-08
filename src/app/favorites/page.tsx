@@ -1,6 +1,7 @@
 import cloudinary from "cloudinary";
-import CloudinayImage from "../gallery/CloudinaryImage";
+import { CloudinayImage } from "../gallery/CloudinaryImage";
 import { ForceRefresh } from "@/components/force-refresh";
+import FavoritesList from "./favorites-list";
 
 export type SearchResult = {
   public_id: string;
@@ -22,19 +23,9 @@ export default async function FavoritesPage() {
         <div className="flex justify-between">
           <h1 className="text-4xl font-bold">Favorite Images</h1>
         </div>
-
-        <div className="grid grid-cols-4 gap-4">
-          {result.resources.map((result) => (
-            <CloudinayImage
-              key={result.public_id}
-              imagedata={result}
-              path="/favorites"
-              width="400"
-              height="300"
-              alt={"image discription"}
-            />
-          ))}
-        </div>
+        <FavoritesList
+          initialResources={result.resources}
+        />
       </div>
     </section>
   );

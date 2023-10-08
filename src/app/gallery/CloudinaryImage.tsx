@@ -1,28 +1,35 @@
 "use client";
 
 import { HeartIcon } from "@/components/icons/heart";
-import { CldImage } from "next-cloudinary";
+import { CldImage, CldImageProps } from "next-cloudinary";
 import { setAsFavouriteAction } from "./actions";
-import { useTransition } from "react";
+import { useState, useTransition } from "react";
 import { SearchResult } from "./page";
 import { FullHeartIcon } from "@/components/icons/filled-heart";
 
-export default function CloudinayImage(
-  props: any & { imagedata: SearchResult, path: string }
+export function CloudinayImage(
+  props: {
+    imagedata: SearchResult;
+    onUnheart?: (unheartedResource: SearchResult) => void;
+  } & Omit<CldImageProps, "src">
 ) {
-  const { imagedata } = props;
+  const { imagedata, onUnheart } = props;
 
   const [transition, startTransition] = useTransition();
-  const isFavorited = imagedata.tags.includes("favorite");
+  const [isFavorite, setIsFavorite] = useState(
+    imagedata.tags.includes("favorite")
+  );
 
   return (
     <div className="relative">
       <CldImage {...props} src={imagedata.public_id} />
-      {isFavorited ? (
+      {isFavorite ? (
         <FullHeartIcon
           onClick={() => {
+            onUnheart?.(imagedata);
+            setIsFavorite(false);
             startTransition(() => {
-              setAsFavouriteAction(imagedata.public_id, false, props.path);
+              setAsFavouriteAction(imagedata.public_id, false);
             });
           }}
           className="absolute top-2 right-2 hover:text-white text-red-600 cursor-pointer"
@@ -30,8 +37,10 @@ export default function CloudinayImage(
       ) : (
         <HeartIcon
           onClick={() => {
+            onUnheart?.(imagedata);
+            setIsFavorite(true);
             startTransition(() => {
-              setAsFavouriteAction(imagedata.public_id, true, props.path);
+              setAsFavouriteAction(imagedata.public_id, true);
             });
           }}
           className="absolute top-2 right-2 hover:text-red-600 cursor-pointer"
