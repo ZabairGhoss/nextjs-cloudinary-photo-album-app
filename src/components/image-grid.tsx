@@ -1,4 +1,4 @@
-import { CloudinayImage } from "@/app/gallery/CloudinaryImage";
+import { CloudinayImage } from "@/components/CloudinaryImage";
 import { SearchResult } from "@/app/gallery/page";
 import { ReactNode } from "react";
 
