@@ -1,5 +1,5 @@
 import cloudinary from "cloudinary";
-import { CloudinayImage } from "../gallery/CloudinaryImage";
+import { CloudinayImage } from "../../components/CloudinaryImage";
 import { ForceRefresh } from "@/components/force-refresh";
 import FavoritesList from "./favorites-list";
 

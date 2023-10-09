@@ -1,6 +1,6 @@
 "use client";
 
-import { CloudinayImage } from "./CloudinaryImage";
+import { CloudinayImage } from "../../components/CloudinaryImage";
 import { ImageGrid } from "@/components/image-grid";
 
 export type SearchResult = {
