@@ -31,7 +31,7 @@ const AsideMenuBar = () => {
               </Link>
             </Button>
             <Button variant="ghost" asChild className="w-full justify-start gap-2">
-              <Link href={"/Albums"}>
+              <Link href={"/albums"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
