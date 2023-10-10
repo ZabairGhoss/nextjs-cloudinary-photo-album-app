@@ -46,8 +46,8 @@ export function CloudinayImage(
           }}
           className="absolute top-2 left-2 hover:text-red-600 cursor-pointer"
         />
-        )}
-        <ImageMenu image={imagedata} />
+      )}
+      <ImageMenu image={imagedata} />
     </div>
   );
 }
