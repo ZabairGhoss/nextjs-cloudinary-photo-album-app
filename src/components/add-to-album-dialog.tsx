@@ -17,12 +17,26 @@ import { FolderPlus } from "lucide-react";
 import { useState } from "react";
 import { AddImageToAlbum } from "./actions";
 
-export function AddToAlbumDialog({ image }: { image: SearchResult }) {
+export function AddToAlbumDialog({
+  image,
+  onClose,
+}: {
+  image: SearchResult;
+  onClose: () => void;
+}) {
   const [albumName, setAlbumName] = useState("");
   const [open, setOpen] = useState(false);
 
   return (
-    <Dialog open={open} onOpenChange={() => setOpen(true)}>
+    <Dialog
+      open={open}
+      onOpenChange={(newOpenState) => {
+        setOpen(newOpenState);
+        if (!newOpenState) {
+          onClose();
+        }
+      }}
+    >
       <DialogTrigger>
         <Button variant="ghost" className="p-2">
           <FolderPlus className="mr-2 h-4 w-4" />
@@ -54,6 +68,7 @@ export function AddToAlbumDialog({ image }: { image: SearchResult }) {
             type="submit"
             onClick={async () => {
               setOpen(false);
+              onClose();
               await AddImageToAlbum(image, albumName);
             }}
           >
