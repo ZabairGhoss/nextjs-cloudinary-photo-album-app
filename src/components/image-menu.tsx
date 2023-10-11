@@ -9,6 +9,9 @@ import { MenuIcon } from "./icons/menu";
 import { AddToAlbumDialog } from "./add-to-album-dialog";
 import { SearchResult } from "@/app/gallery/page";
 import { useState } from "react";
+import Link from "next/link";
+import { Edit } from "lucide-react";
+
 
 export function ImageMenu({
   image,
@@ -30,6 +33,12 @@ export function ImageMenu({
         <DropdownMenuContent className="w-36">
           <DropdownMenuItem asChild>
             <AddToAlbumDialog image={image} onClose={() => setOpen(false)} />
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <div>
+            <Edit className="mr-2 w-4" />
+            <Link href={`/edit?publicId=${encodeURIComponent(image.public_id)}`}>Edit</Link>
+            </div>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
