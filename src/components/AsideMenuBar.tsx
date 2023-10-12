@@ -1,8 +1,16 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import cloudinary from "cloudinary";
 
-const AsideMenuBar = () => {
+export type Folder = { name: string; path: string };
+
+const AsideMenuBar = async () => {
+
+  const { folders } = (await cloudinary.v2.api.root_folders()) as {
+    folders: Folder[];
+  };
+
   return (
     <div className={"pb-12 w-1/5"}>
       <div className="space-y-4 py-4">
@@ -49,6 +57,13 @@ const AsideMenuBar = () => {
               Albums
               </Link>
             </Button>
+            {folders.map((folder)=>(
+              <Button variant="ghost" asChild key={folder.name} className="w-full justify-start gap-2">
+                 <Link className="pl-8" href={`/albums/${folder.path}`}>
+              {folder.name}
+              </Link>
+              </Button>
+            ))}
             <Button variant="ghost" asChild className="w-full justify-start gap-2">
               <Link href={"/favorites"}>
               <svg
