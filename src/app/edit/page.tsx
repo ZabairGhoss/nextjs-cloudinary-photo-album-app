@@ -39,7 +39,7 @@ export default function EditPage({
           >
             Clear All
           </Button>
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-3">
             <Button
               onClick={() => {
                 setTransformation("generative-fill");
