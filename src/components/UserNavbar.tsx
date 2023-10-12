@@ -18,6 +18,8 @@ const UserNavbar = () => {
         ZG PHOTOS ALBUM
         </div>
         </Link>
+      <div className="flex h-16 items-center px-4 container mx-auto font-bold">
+        PHOTOS APP
         <div className="ml-auto flex items-center space-x-4">
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
