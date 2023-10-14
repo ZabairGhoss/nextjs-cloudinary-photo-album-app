@@ -1,4 +1,3 @@
-import { CloudinayImage } from "@/components/CloudinaryImage";
 import { SearchResult } from "@/app/gallery/page";
 import { ReactNode } from "react";
 
@@ -20,7 +19,7 @@ export function ImageGrid({
       {[getColumns(0), getColumns(1), getColumns(2), getColumns(3)].map(
         (column, index) => (
           <div className="flex flex-col gap-4" key={index}>
-            {column.map((getImage))}
+            {column.map(getImage)}
           </div>
         )
       )}

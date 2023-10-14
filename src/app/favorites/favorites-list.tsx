@@ -31,7 +31,7 @@ export default function FavoritesList({
             onUnheart={(unheartedResources) => {
               setResources((currentResources) =>
                 currentResources.filter((resource) => {
-                  resource.public_id !== unheartedResources.public_id;
+                  return resource.public_id !== unheartedResources.public_id;
                 })
               );
             }}

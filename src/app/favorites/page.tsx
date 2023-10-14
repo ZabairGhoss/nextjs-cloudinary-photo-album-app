@@ -23,9 +23,7 @@ export default async function FavoritesPage() {
         <div className="flex justify-between">
           <h1 className="text-4xl font-bold">Favorite Images</h1>
         </div>
-        <FavoritesList
-          initialResources={result.resources}
-        />
+        <FavoritesList initialResources={result.resources} />
       </div>
     </section>
   );
