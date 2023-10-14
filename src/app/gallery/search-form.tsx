@@ -26,14 +26,14 @@ export function SearchForm({ initialSearch }: { initialSearch: string }) {
           router.refresh();
         }}
       >
-        <Label htmlFor="tag-name" className="text-right">
+        <Label htmlFor="album-name" className="text-right">
           Search by Tag
         </Label>
         <div className="flex gap-2">
           <Input
             onChange={(e) => handleTagNameChange(e)}
             id="album-name"
-            value={tagName}
+            value={tagName? tagName : ''}
             className="col-span-3"
           />
 
