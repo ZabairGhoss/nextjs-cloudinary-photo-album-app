@@ -47,5 +47,5 @@ This Photo Gallery Web App is designed to provide a feature-rich, user-friendly 
 
 ## Conclusion
 
-Our Photo Gallery Web App is a testament to modern web development, combining powerful technologies with a user-centric approach. With its tag-based search, AI-based image editing, versatile upload options, and other advanced features, it's poised to be a go-to platform for photo enthusiasts and professionals alike. This project promises an enhanced photo management experience, and we are excited to bring it to life.
+this Photo Gallery Web App is a testament to modern web development, combining powerful technologies with a user-centric approach. With its tag-based search, AI-based image editing, versatile upload options, and other advanced features, it's poised to be a go-to platform for photo enthusiasts and professionals alike. This project promises an enhanced photo management experience, and we are excited to bring it to life.
 ```
