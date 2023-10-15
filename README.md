@@ -1,5 +1,4 @@
 
-```markdown
 # Photo Gallery Web App
 
 ## Introduction
