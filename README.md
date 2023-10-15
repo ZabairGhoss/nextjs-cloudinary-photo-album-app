@@ -3,7 +3,7 @@
 
 ## Introduction
 
-We are excited to present a cutting-edge Photo Gallery Web App, built on the robust foundations of Next.js and Tailwind CSS. This app leverages Cloudinary as a powerful media management tool and integrates the sleek Shadcn-UI for a seamless user experience. Our Photo Gallery Web App is designed to provide an exceptional platform for users to organize, explore, and enhance their photo collections.
+I am here excited to present a cutting-edge Photo Gallery Web App, built on the robust foundations of Next.js and Tailwind CSS. This app leverages Cloudinary as a powerful media management tool and integrates the sleek Shadcn-UI for a seamless user experience. this Photo Gallery Web App is designed to provide an exceptional platform for users to organize, explore, and enhance their photo collections.
 
 ## Key Features
 
@@ -33,7 +33,7 @@ We are excited to present a cutting-edge Photo Gallery Web App, built on the rob
 
 ## Project Objectives
 
-Our Photo Gallery Web App is designed to provide a feature-rich, user-friendly platform for individuals to manage and explore their photo collections with ease. The primary goals of this project include:
+This Photo Gallery Web App is designed to provide a feature-rich, user-friendly platform for individuals to manage and explore their photo collections with ease. The primary goals of this project include:
 
 - **Efficiency:** Simplify the process of organizing and searching for photos, making it easier for users to manage their collections.
 
