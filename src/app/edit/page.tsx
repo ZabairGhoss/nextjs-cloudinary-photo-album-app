@@ -99,7 +99,8 @@ export default function EditPage({
               src={publicId}
               width="300"
               height="300"
-              grayscale
+              // grayscale="true"
+              style={{ filter: 'grayscale(100%)' }}
               alt="some image"
             />
           )}
