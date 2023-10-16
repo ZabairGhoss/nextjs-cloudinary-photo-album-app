@@ -14,12 +14,7 @@ export default function EditPage({
   };
 }) {
   const [transformation, setTransformation] = useState<
-    | undefined
-    | "generative-fill"
-    | "blur"
-    | "grayscale"
-    | "pixelate"
-    | "bg-remove"
+    undefined | "generative-fill" | "blur" | "grayscale" | "bg-remove"
   >();
 
   const [pendingPrompt, setPendingPrompt] = useState("");
@@ -60,9 +55,6 @@ export default function EditPage({
           <Button onClick={() => setTransformation("grayscale")}>
             Convet to Gray
           </Button>
-          <Button onClick={() => setTransformation("pixelate")}>
-            Pixelate
-          </Button>
           <Button onClick={() => setTransformation("bg-remove")}>
             Remove Background
           </Button>
@@ -90,7 +82,7 @@ export default function EditPage({
               width="300"
               height="300"
               alt="some image"
-              blur="800"
+              style={{ filter: "blur(8px)" }}
             />
           )}
 
@@ -99,17 +91,7 @@ export default function EditPage({
               src={publicId}
               width="300"
               height="300"
-              grayscale
-              alt="some image"
-            />
-          )}
-
-          {transformation === "pixelate" && (
-            <CldImage
-              src={publicId}
-              width="300"
-              height="300"
-              pixelate
+              style={{ filter: "grayscale(100%)" }}
               alt="some image"
             />
           )}
