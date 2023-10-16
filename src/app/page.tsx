@@ -1,28 +1,17 @@
 "use client";
 
-import { CldImage } from "next-cloudinary";
-import { useState } from "react";
-
-export type UploadResult = {
-  info: {
-    public_id: string;
-  };
-  event: "success"
-}
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
-  const [imageId, setImageId] = useState("");
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {imageId && (
-        <CldImage
-          width="960"
-          height="600"
-          src={imageId}
-          sizes="100vw"
-          alt="Description of my image"
-        />
-      )}
-    </main>
+    <main className="flex min-h-screen flex-col items-center p-24">
+      <h1>Welcome to Next-Cloudinary Photo Album Web App</h1>
+        <Button className="mt-10">
+          <Link href={'/gallery'}>
+            Open Gallery
+          </Link>
+        </Button>
+    </main> 
   );
 }
